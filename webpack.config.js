@@ -1,8 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const Handlebars = require('handlebars')
-// const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin')
+const Handlebars = require('handlebars')
+const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
