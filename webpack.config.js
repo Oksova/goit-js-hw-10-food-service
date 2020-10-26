@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const Handlebars = require('handlebars')
+// const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -25,7 +26,7 @@ module.exports = {
         use: ['file-loader'],
       },
       {
-        test: /\.handlebars$/,
+        test: /\.hbs$/,
         use: ['handlebars-loader'],
       },
     ],
@@ -33,6 +34,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
     new MiniCssExtractPlugin(),
+    new GhPagesWebpackPlugin(),
   ],
 
   devServer: {
