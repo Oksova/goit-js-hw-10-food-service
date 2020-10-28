@@ -24,7 +24,7 @@ console.log(menuCardsMarkup);
 
 refs.switchEl.addEventListener('change', onSwitchElClick);
 refs.switchEl.addEventListener('change', setLocalStorage);
-document.addEventListener('', onSwitchToggleDrag);
+document.addEventListener('DOMContentLoaded', onSwitchToggleDrag);
 
 function onSwitchElClick() {
   if (refs.switchEl.checked) {
@@ -34,7 +34,7 @@ function onSwitchElClick() {
   }
 }
 
-function setLocalStorage(e) {
+function setLocalStorage(event) {
   if (refs.switchEl.checked) {
     localStorage.setItem('theme', Theme.DARK);
   } else {
@@ -51,12 +51,12 @@ function onSwitchToggleDrag() {
   }
 }
 
-function setDarkTheme() {
-  refs.bodyEl.classList.add('theme', Theme.DARK);
-  refs.bodyEl.classList.remove('theme', Theme.LIGHT);
-}
-
 function setLightTheme() {
   refs.bodyEl.classList.add('theme', Theme.LIGHT);
   refs.bodyEl.classList.remove('theme', Theme.DARK);
+}
+
+function setDarkTheme() {
+  refs.bodyEl.classList.add('theme', Theme.DARK);
+  refs.bodyEl.classList.remove('theme', Theme.LIGHT);
 }
